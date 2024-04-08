@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/bootstrap.css">
+    </head>
+
+    <body>
+        <div class="container-fluid" style="background-color: rgb(56, 54, 82);">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" style="color:white" href ="/shome">Student Home</a>
+                </li>  
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" style="color:white" href ="/stud_show_teach">show all teachers</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" style="color:white" href="/stud_edit">Edit profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" style="color:white" href="/leave">Leave application</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" style="color:white" href="/stu_leave_sts">Leave application Status</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/" style="color:white">Logout</a>
+              </li>
+            </ul>
+        </div>
+
+        <h2 style="font-family:monospace; text-align: center; padding-top:70px;">Student view Leave Details</h2>
+
+        <table class="table table-dark table-striped" style=" margin: 0 auto; width: 80%;">
+           <tr class="table-dark">
+                <th>Date</th>
+                <th>Teacher Name</th>
+                <th>Reason</th>
+                <th>Status</th>
+           </tr>
+
+           {% for i in st %}
+                <tr class="table-secondary">
+                    <td>{{ i.date }}</td>
+                    <td>{{ i.totea }}</td>            
+                    <td>{{ i.msg }}</td> 
+                    <td>{{ i.status }}</td>            
+                </tr>
+           {% endfor %}
+
+        </table>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+        <script src="/js/bootstrap.js" async defer></script>
+    </body>
+</html>

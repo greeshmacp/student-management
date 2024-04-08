@@ -1,0 +1,48 @@
+{% extends 'adminbase.html' %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/bootstrap.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+    <body>
+        {% block content %}
+        <h2 style="text-align:center; font-family: monospace; padding-top:70px;">All Teacher details</h2>
+
+        <table class="table" style=" margin: 0 auto; width: 80%;">
+            <tr class="table-dark">
+                <th>Teacher Name</th>               
+                <th>Department</th>
+                <th>Status</th>
+                <th></th>
+                <th></th>
+            </tr>
+
+            {% for i in teachers %}
+
+                <tr class="table-secondary">
+                    <td> {{ i.tname }}</td>
+                    <td> {{ i.department }}</td>
+                    <td> {{ i.status }}</td>
+
+                    <td>
+                        <a href="/edit/{{ i.id }}">Edit</a>
+                    </td>
+
+                    <td>
+                        <a href="/del/{{ i.id }}" style="color:red">Delete</a>
+                    </td>
+                </tr>
+
+            {% endfor %}
+        </table>
+        {% endblock content %}
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+        <script src="/js/bootstrap.js" async defer></script>
+    </body>
+</html>

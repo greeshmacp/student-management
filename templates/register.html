@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+
+    {% block content %}
+    {% comment %} <form action="" method="post">
+        {% csrf_token %}
+        <label for="name">Student Name:</label>
+        <input type="text" id="name" name="name" value="none">
+        <br><br>
+
+
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department">
+        <br><br>
+
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br><br>     
+   
+        <input type="submit" value="register">
+    </form> {% endcomment %}
+
+
+    <section class="vh-100">
+        <div class="container py-5 h-100">
+          <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+                class="img-fluid" alt="Phone image">
+            </div>
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+            <form action="" method="post">
+                {% csrf_token %}
+                <!-- Email input -->
+                <h2 style="font-family: cursive; color: rgb(106, 14, 173); text-align: center;">Student Registration</h2><br>
+
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="name">Student Name</label>
+                  <input type="text" id="name" name="name" value="none" class="form-control form-control-lg" />
+                </div>
+      
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="department">Department</label>
+                    <input type="text" id="department" name="department" class="form-control form-control-lg" />
+                  </div>
+
+                
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="username">Username</label>
+                    <input type="text" id="username" name="username" class="form-control form-control-lg" />
+                </div>
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="password">Password</label>
+                  <input type="password" id="password" name="password" class="form-control form-control-lg" />
+                </div>
+      
+                
+      
+                <!-- Submit button -->
+                <div class="form-outline mb-4">
+                    <input type="submit" value="Register" style="background-color: rgb(56, 54, 82); color: white;" class="form-control form-control-lg" />
+                </div>
+      
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,44 @@
+{% extends 'adminbase.html' %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        {% block content %}
+        <h1 style="font-family:monospace; text-align: center; padding-top:70px;">Assign Teacher</h1>
+
+        <table  class="table" style=" margin: 0 auto; width: 80%;">
+            <tr class="table-dark">
+                <th>student Name</th>               
+                <th>Department</th>
+                <th>Status</th>
+                <th> Teacher</th>
+                <th></th>
+            </tr>
+
+            {% for i in st %}
+
+                <tr class="table-secondary">
+                    <td> {{ i.sname }}</td>
+                    <td> {{ i.department }}</td>
+                    <td> {{ i.status }}</td>
+                    <td> {{i.tea }} </td>
+
+                    <td>
+                        <a href="/assign/{{ i.id }}">Assign Teacher</a>
+                    </td>
+
+                </tr>
+
+            {% endfor %}
+        </table>
+        {% endblock %}
+        <script src="" async defer></script>
+    </body>
+</html>
